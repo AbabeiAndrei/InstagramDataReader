@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E07224C1-CA1C-4807-A6AB-483F72E61F21}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>InstagramDataReader</RootNamespace>
+    <AssemblyName>InstagramDataReader</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\ConcreteTypeConverter.cs" />
+    <Compile Include="Data\ConcreteTypeColectionConverter.cs" />
+    <Compile Include="Instagram\BaseInstagramDataElement.cs" />
+    <Compile Include="Instagram\Exceptions\InstagramElementNotRootFile.cs" />
+    <Compile Include="Instagram\IInstagramCollectionElements.cs" />
+    <Compile Include="Instagram\Implementation\Controls\InstagramConnectionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Instagram\Implementation\Controls\InstagramConnectionsControl.Designer.cs">
+      <DependentUpon>InstagramConnectionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instagram\Implementation\Controls\InstagramContactsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Instagram\Implementation\Controls\InstagramContactsControl.Designer.cs">
+      <DependentUpon>InstagramContactsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instagram\Implementation\Controls\InstagramConversations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Instagram\Implementation\Controls\InstagramConversations.Designer.cs">
+      <DependentUpon>InstagramConversations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instagram\Implementation\Controls\InstragramCommentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Instagram\Implementation\Controls\InstragramCommentsControl.Designer.cs">
+      <DependentUpon>InstragramCommentsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instagram\Implementation\InstagramContacts.cs" />
+    <Compile Include="Instagram\Implementation\InstagramConversations.cs" />
+    <Compile Include="Instagram\Implementation\InstagramLikes.cs" />
+    <Compile Include="Instagram\Implementation\InstagramMedia.cs" />
+    <Compile Include="Instagram\Implementation\InstagramProfile.cs" />
+    <Compile Include="Instagram\Implementation\InstagramSaved.cs" />
+    <Compile Include="Instagram\Implementation\InstagramSearches.cs" />
+    <Compile Include="Instagram\Implementation\InstagramSettings.cs" />
+    <Compile Include="Instagram\INodeControl.cs" />
+    <Compile Include="Instagram\InstagramHelper.cs" />
+    <Compile Include="Instagram\Interfaces\IIdentificable.cs" />
+    <Compile Include="Instagram\Implementation\InstagramComments.cs" />
+    <Compile Include="Instagram\Implementation\InstagramConnections.cs" />
+    <Compile Include="Instagram\Interfaces\Entities\IInstagramComment.cs" />
+    <Compile Include="Instagram\Interfaces\Entities\IInstagramConnections.cs" />
+    <Compile Include="Instagram\Interfaces\Entities\IInstagramContacts.cs" />
+    <Compile Include="Instagram\Interfaces\Entities\IInstagramLikes.cs" />
+    <Compile Include="Instagram\Interfaces\Entities\IInstagramMedias.cs" />
+    <Compile Include="Instagram\Interfaces\Entities\IInstagramProfile.cs" />
+    <Compile Include="Instagram\Interfaces\Entities\IInstagramReader.cs" />
+    <Compile Include="Instagram\Interfaces\Entities\IInstagramSaved.cs" />
+    <Compile Include="Instagram\Interfaces\Entities\IInstagramSearches.cs" />
+    <Compile Include="Instagram\Interfaces\Entities\IInstagramSettings.cs" />
+    <Compile Include="Instagram\Interfaces\INode.cs" />
+    <Compile Include="Instagram\InstagramReader.cs" />
+    <Compile Include="Instagram\Interfaces\Entities\IInstagramConversations.cs" />
+    <Compile Include="Instagram\Exceptions\InstagramReaderNotLoadedException.cs" />
+    <Compile Include="Instagram\Interfaces\IPhoto.cs" />
+    <Compile Include="Instagram\Interfaces\IRootNode.cs" />
+    <Compile Include="Instagram\Ui\IInstagramUiHelper.cs" />
+    <Compile Include="Instagram\Ui\InstagramUiHelper.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinApi\WinApi.cs" />
+    <EmbeddedResource Include="Instagram\Implementation\Controls\InstagramConnectionsControl.resx">
+      <DependentUpon>InstagramConnectionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instagram\Implementation\Controls\InstagramContactsControl.resx">
+      <DependentUpon>InstagramContactsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instagram\Implementation\Controls\InstagramConversations.resx">
+      <DependentUpon>InstagramConversations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instagram\Implementation\Controls\InstragramCommentsControl.resx">
+      <DependentUpon>InstragramCommentsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\InstagramDataReader.Instagram.InstagramComment.datasource" />
+    <None Include="Properties\DataSources\InstagramDataReader.Instagram.InstagramConnection.datasource" />
+    <None Include="Properties\DataSources\InstagramDataReader.Instagram.InstagramContact.datasource" />
+    <None Include="Properties\DataSources\InstagramDataReader.Instagram.InstagramConversation.datasource" />
+    <None Include="Properties\DataSources\InstagramDataReader.Instagram.InstagramLike.datasource" />
+    <None Include="Properties\DataSources\InstagramDataReader.Instagram.InstagramMedia.datasource" />
+    <None Include="Properties\DataSources\InstagramDataReader.Instagram.InstagramMessage.datasource" />
+    <None Include="Properties\DataSources\InstagramDataReader.Instagram.InstagramProfile.datasource" />
+    <None Include="Properties\DataSources\InstagramDataReader.Instagram.InstagramSaved.datasource" />
+    <None Include="Properties\DataSources\InstagramDataReader.Instagram.InstagramSearch.datasource" />
+    <None Include="Properties\DataSources\InstagramDataReader.Instagram.InstagramSettings.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
